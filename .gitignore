@@ -102,3 +102,16 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#PyCharm
+.idea/
+
+# Temp file from editor
+*~
+.*.swp
+
+# temp output/error files
+#out
+#err
+#out.*
+#err.*
