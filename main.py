@@ -6,6 +6,11 @@ from random import shuffle
 
 # https://hu.wikipedia.org/wiki/Hangut%C3%A1nz%C3%B3_sz%C3%B3#Hangut%C3%A1nz%C3%B3_szavak_alkot%C3%A1sa
 
+# TODO: There is still room for improvement!
+verbal_particles = ['', 'agyon', 'át', 'be', 'bele', 'el', 'elő', 'fel', 'föl', 'hátra', 'haza', 'helyre', 'hozzá',
+                    'ide', 'keresztbe', 'keresztül', 'készen', 'ki', 'körbe', 'körül', 'közbe', 'le', 'meg', 'mellé',
+                    'neki', 'oda', 'össze', 'rá', 'rendbe', 'széjjel', 'szembe', 'szét', 'tele', 'túl', 'végig',
+                    'vissza', 'viszont']
 # TODO: Improve this further!
 suffixes = {('a', 'á', 'u', 'ú', 'í', 'o', 'ó'): ['an', 'ag', 'og'],
             ('e', 'é', 'i'): ['en', 'eg', 'ol'],
@@ -27,8 +32,8 @@ for c in Consonants:
                 suff = suffs[0]
                 if v in s:
                     break
-
-            onomatopoeic_words.append('{0}{1}{2}{3}'.format(c, v, dc, suff))
+            for part in verbal_particles:
+                onomatopoeic_words.append('{0}{1}{2}{3}{4}'.format(part, c, v, dc, suff))
 
 
 shuffle(onomatopoeic_words)
